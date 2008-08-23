@@ -40,3 +40,28 @@ let find_prime n sieve =
         end
       | Composite -> find_prime_aux (succ i) pi in
   find_prime_aux 2 1
+
+let iter f sieve =
+  let rec iter_aux i =
+    if i >= size sieve then ()
+    else
+      match sieve.(i) with
+        Prime | Unknown -> begin
+          mark_prime i sieve;
+          f i;
+          iter_aux (succ i)
+        end
+      | Composite -> iter_aux (succ i) in
+  iter_aux 2
+
+let fold f init sieve =
+  let rec fold_aux i acc =
+    if i >= size sieve then acc
+    else
+      match sieve.(i) with
+        Prime | Unknown -> begin
+          mark_prime i sieve;
+          fold_aux (succ i) (f i acc)
+        end
+      | Composite -> fold_aux (succ i) acc in
+  fold_aux 2 init
