@@ -20,3 +20,5 @@ let prime_factors n =
     else if eq_big_int (mod_big_int n i) zero_big_int then loop i (div_big_int n i) (i :: factors)
     else loop (succ_big_int i) n factors in
   loop (big_int_of_int 2) n []
+
+let ( <<- ) a b x = a (b x)
