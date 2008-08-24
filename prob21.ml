@@ -15,9 +15,6 @@
 
 let cache = Hashtbl.create 10_000
 
-let proper_divisors n =
-  IntSet.remove n (divisors n)
-
 let _ =
   for i = 2 to 9_999 do
     let bi = (big_int_of_int i) in

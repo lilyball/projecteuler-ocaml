@@ -53,5 +53,8 @@ let divisors n =
   combinations (fun x -> set := IntSet.add (prod x) !set) factors;
   !set
 
+let proper_divisors n =
+  IntSet.remove n (divisors n)
+
 let num_divisors n =
   IntSet.cardinal (divisors n)
