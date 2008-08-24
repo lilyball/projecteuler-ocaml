@@ -26,19 +26,19 @@ let ( <<- ) a b x = a (b x)
 
 module IntSet = Set.Make(struct type t = big_int let compare = compare_big_int end)
 
-let rec lremove i l =
+let rec lsplit i l =
   match l with
-    [] -> failwith "lremove out of bounds"
+    [] -> failwith "lsplit out of bounds"
   | hd :: tl ->
       if i = 0 then (hd, tl)
-      else lremove (pred i) tl
+      else lsplit (pred i) tl
 
 let combinations f l =
   let rec aux n l acc =
     if n = 0 then f acc
     else
       for i = 0 to List.length l - 1 do
-        let elt, l2 = lremove i l in
+        let elt, l2 = lsplit i l in
         aux (pred n) l2 (elt :: acc)
       done in
   for i = 1 to List.length l do
