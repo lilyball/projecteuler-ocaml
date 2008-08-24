@@ -4,7 +4,7 @@
   What is the 10001st prime number?
 *)
 
-#load "sieve.cma"
+#load "sieve.cmo"
 
 let sieve = Sieve.make 200000
 

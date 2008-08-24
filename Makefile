@@ -4,8 +4,11 @@
 %.cmo: %.ml %.cmi
 	ocamlc -c $<
 
-sieve.cma: sieve.cmo
-	ocamlc -a $< -o $@
+%.cmx: %.ml %.cmi
+	ocamlopt -c $<
+
+%: %.ml
+	ocaml $<
 
 clean:
 	rm -rf *.cmi *.cma *.cmo *.cmx *.cmxa *.o
