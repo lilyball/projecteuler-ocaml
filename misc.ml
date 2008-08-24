@@ -49,10 +49,12 @@ let prod l =
   List.fold_left mult_big_int unit_big_int l
 
 let divisors n =
-  let factors = (prime_factors n)
-  and set = ref (IntSet.singleton unit_big_int) in
-  combinations (fun x -> set := IntSet.add (prod x) !set) factors;
-  !set
+  if lt_big_int n unit_big_int then IntSet.empty
+  else
+    let factors = (prime_factors n)
+    and set = ref (IntSet.singleton unit_big_int) in
+    combinations (fun x -> set := IntSet.add (prod x) !set) factors;
+    !set
 
 let proper_divisors n =
   IntSet.remove n (divisors n)
