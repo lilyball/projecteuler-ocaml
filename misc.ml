@@ -26,12 +26,23 @@ let ( <<- ) a b x = a (b x)
 
 module IntSet = Set.Make(struct type t = big_int let compare = compare_big_int end)
 
+(* finds the nth sub-list and returns hd * tl *)
 let rec lsplit i l =
   match l with
     [] -> failwith "lsplit out of bounds"
   | hd :: tl ->
-      if i = 0 then (hd, tl)
-      else lsplit (pred i) tl
+    if i = 0 then (hd, tl)
+    else lsplit (pred i) tl
+
+(* removes the nth element and returns that elt plus the list without it *)
+let lremove i l =
+  let rec lremove_aux i l acc =
+    match l with
+      [] -> failwith "lremove out of bounds"
+    | hd :: tl ->
+      if i = 0 then hd, List.rev (List.fold_left (fun l i -> i :: l) acc tl)
+      else lremove_aux (pred i) tl (hd :: acc) in
+  lremove_aux i l []
 
 let combinations f l =
   let rec aux n l acc =
