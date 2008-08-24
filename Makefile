@@ -35,6 +35,7 @@ prob24: nums.cmxa misc.cmx
 prob25: nums.cmxa
 prob26: nums.cmxa
 prob27: sieve.cmx nums.cmxa misc.cmx
+prob29: nums.cmxa misc.cmx
 
 clean:
 	rm -rf *.cmi *.cma *.cmo *.cmx *.cmxa *.o
