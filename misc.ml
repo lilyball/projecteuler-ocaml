@@ -44,6 +44,11 @@ let lremove i l =
       else lremove_aux (pred i) tl (hd :: acc) in
   lremove_aux i l []
 
+(* [range a b] returns a list of ints from [a] to [b] *)
+let rec range a b =
+  if a > b then []
+  else a :: range (a+1) b
+
 let combinations f l =
   let rec aux n l acc =
     if n = 0 then f acc
