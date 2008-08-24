@@ -1,4 +1,5 @@
-#use "misc.ml"
+open Misc
+open Big_int
 
 module Int = struct
   type t = int

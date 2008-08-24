@@ -16,7 +16,8 @@
   Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 *)
 
-#use "misc.ml"
+open Misc
+open Big_int
 
 type classification = Perfect | Deficient | Abundant
 

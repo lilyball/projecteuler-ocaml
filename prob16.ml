@@ -6,7 +6,6 @@
   What is the sum of the digits of the number 2**1000?
 *)
 
-#load "nums.cma"
 open Big_int
 
 let large_num = power_int_positive_int 2 1000

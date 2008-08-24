@@ -4,8 +4,6 @@
   What is the 10001st prime number?
 *)
 
-#load "sieve.cmo"
-
 let sieve = Sieve.make 200000
 
 let _ =

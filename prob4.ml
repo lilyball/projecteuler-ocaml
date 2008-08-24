@@ -19,4 +19,4 @@ let _ =
       if prod > !pal && is_palindrome (string_of_int prod) then pal := prod
     done
   done;
-  print_int !pal
+  print_int !pal; print_newline ()

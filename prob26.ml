@@ -20,7 +20,6 @@
   its decimal fraction part.
 *)
 
-#load "nums.cma"
 open Big_int
 open Ratio
 

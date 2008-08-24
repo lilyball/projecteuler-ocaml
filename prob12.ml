@@ -21,7 +21,8 @@
   What is the value of the first triangle number to have over five hundred divisors?
 *)
 
-#use "misc.ml"
+open Misc
+open Big_int
 
 let _ =
   let rec loop i acc =

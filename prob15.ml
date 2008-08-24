@@ -18,7 +18,6 @@
   How many routes are there through a 20×20 grid?
 *)
 
-#load "nums.cma"
 open Big_int
 
 let grid_width = 20

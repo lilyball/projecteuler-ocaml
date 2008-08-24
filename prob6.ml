@@ -10,7 +10,8 @@
   one hundred natural numbers and the square of the sum.
 *)
 
-#use "misc.ml"
+open Misc
+open Big_int
 
 let sum l = List.fold_left add_big_int zero_big_int l
 

@@ -6,7 +6,6 @@
   Find the sum of the digits in the number 100!
 *)
 
-#load "nums.cma"
 open Big_int
 
 let fact_big_int i =

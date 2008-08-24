@@ -11,7 +11,8 @@
   Evaluate the sum of all the amicable numbers under 10000.
 *)
 
-#use "misc.ml"
+open Misc
+open Big_int
 
 let cache = Hashtbl.create 10_000
 

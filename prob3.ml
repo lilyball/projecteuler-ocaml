@@ -4,8 +4,10 @@
   What is the largest prime factor of the number 600851475143 ?
 *)
 
-#use "misc.ml";;
+open Misc
+open Big_int
 
 (* the largest prime factor is always the head of the factors list *)
 
-print_endline (string_of_big_int (List.hd (prime_factors (big_int_of_string "600851475143"))))
+let _ =
+  print_endline (string_of_big_int (List.hd (prime_factors (big_int_of_string "600851475143"))))

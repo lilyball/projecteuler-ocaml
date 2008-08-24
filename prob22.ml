@@ -12,8 +12,6 @@
   What is the total of all the name scores in the file?
 *)
 
-#load "str.cma"
-#load "nums.cma"
 open Big_int
 
 let names =

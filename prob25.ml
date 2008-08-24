@@ -24,7 +24,6 @@
   What is the first term in the Fibonacci sequence to contain 1000 digits?
 *)
 
-#load "nums.cma"
 open Big_int
 
 let upper_bound = 10_000

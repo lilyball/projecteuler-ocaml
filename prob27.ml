@@ -19,8 +19,8 @@
   that produces the maximum number of primes for consecutive values of n, starting with n = 0.
 *)
 
-#load "sieve.cmo"
-#use "misc.ml"
+open Misc
+open Big_int
 
 let sieve = Sieve.make 50_000
 

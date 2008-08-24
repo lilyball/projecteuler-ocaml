@@ -4,8 +4,6 @@
   Find the sum of all the primes below two million.
 *)
 
-#load "sieve.cmo"
-#load "nums.cma"
 open Big_int
 
 let sieve = Sieve.make 2000000

@@ -1,4 +1,3 @@
-#load "nums.cma"
 open Big_int
 
 let print_list f l =
