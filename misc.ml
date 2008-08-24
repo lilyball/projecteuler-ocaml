@@ -47,8 +47,11 @@ let combinations f l =
 let prod l =
   List.fold_left mult_big_int unit_big_int l
 
-let num_divisors n =
+let divisors n =
   let factors = (prime_factors n)
   and set = ref (IntSet.singleton unit_big_int) in
   combinations (fun x -> set := IntSet.add (prod x) !set) factors;
-  IntSet.cardinal !set
+  !set
+
+let num_divisors n =
+  IntSet.cardinal (divisors n)
