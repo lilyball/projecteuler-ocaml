@@ -1,0 +1,6 @@
+This is a collection of solutions to the projecteuler.net problems using OCaml.
+Unless otherwise noted, each solution was written by Kevin Ballard <kevin@sb.org>.
+
+To run each problem, simply execute `ocaml prob##.ml` where ## is the number of the problem.
+Note that some problems rely on the Sieve of Eratosthenes implementation, which must be
+compiled first using `make sieve.cma`.
